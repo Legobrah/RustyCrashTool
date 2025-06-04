@@ -1,0 +1,10 @@
+[package]
+name = "RustyCrashTool"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.31"
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+directories = "6"
+open = "5"
