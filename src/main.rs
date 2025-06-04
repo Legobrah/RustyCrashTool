@@ -7,6 +7,7 @@ use std::thread;
 use chrono::Local;
 use directories::BaseDirs;
 use eframe::egui;
+use open as open_file;
 
 /// Capture the last 100 lines from the system journal and save them to a file.
 fn capture_snapshot() -> std::io::Result<String> {
@@ -89,7 +90,15 @@ impl eframe::App for CrashToolApp {
             if let Some(path) = maybe_path.as_ref() {
                 ui.separator();
                 ui.label("Last crash log saved to:");
-                ui.monospace(path);
+                ui.horizontal(|ui| {
+                    ui.monospace(path);
+                    if ui.button("Open").clicked() {
+                        let _ = open_file::that(path);
+                    }
+                    if ui.button("Copy").clicked() {
+                        ui.ctx().copy_text(path.clone());
+                    }
+                });
             } else {
                 ui.separator();
                 ui.label("No crashes detected yet.");

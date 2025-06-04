@@ -7,3 +7,4 @@ edition = "2024"
 eframe = "0.31"
 chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
 directories = "6"
+open = "5"

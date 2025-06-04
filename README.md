@@ -4,4 +4,8 @@ RustyCrashTool is a small GUI utility that watches for application crashes on sy
 
 ## Usage
 
-Run `cargo run --release` and keep the app open while you use your system. When an application crashes, a log snapshot will be saved to `~/.local/share/rusty_crash_tool/` and the path will be displayed in the window.
+Run `cargo run --release` and keep the app open while you use your system. When
+an application crashes, a log snapshot will be saved to
+`~/.local/share/rusty_crash_tool/` and the path will be displayed in the
+window. Use the **Open** button to view the file or **Copy** to copy the path to
+your clipboard.
